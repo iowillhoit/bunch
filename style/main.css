@@ -1,0 +1,21 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #ccc;
+}
+
+#main{
+	background-color: #bbb;
+	margin: 25px auto;
+	width: 930px;
+	height: 930px;
+}
+
+.square{
+	float: left;
+	margin: 0 10px 10px 0;
+	background-color: #ddd;
+	border: 1px solid black;
+	width: 298px;
+	height: 298px;
+}

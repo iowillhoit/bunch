@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+		
+		</style>
+
+		<link href="style/main.css" rel="stylesheet" type="text/css" media="all">
+
+		<script type="text/javascript" src="../../../scripts/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			function c(str){
+				console.log(str);
+			}
+			function w(str){
+				document.write(str);
+			}
+			$(document).ready(function(){
+				$('.square').mouseenter(function(){
+					c($(this).attr("id"));
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="1" class="square">
+				<img src="nw/1.png" width="300" height="300" />
+			</div>
+			<div id="2" class="square">
+				<img src="nw/2.png" width="300" height="300" />
+			</div>
+			<div id="3" class="square">
+				<img src="nw/3.png" width="300" height="300" />
+			</div>
+			<div id="4" class="square">
+				<img src="nw/4.png" width="300" height="300" />
+			</div>
+			<div id="5" class="square">
+				<img src="nw/5.png" width="300" height="300" />
+			</div>
+			<div id="6" class="square">
+				<img src="nw/6.png" width="300" height="300" />
+			</div>
+			<div id="7" class="square">
+				<img src="nw/7.png" width="300" height="300" />
+			</div>
+			<div id="8" class="square">
+				<img src="nw/8.png" width="300" height="300" />
+			</div>
+			<div id="9" class="square">
+				<img src="nw/9.png" width="300" height="300" />
+			</div>
+		</div>
+	</body>
+</html>
