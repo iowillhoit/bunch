@@ -2,7 +2,12 @@
 	<head>
 		<title>bunch</title>
 		<link href="style/main.css" rel="stylesheet" type="text/css" media="all">
-		<script type="text/javascript" src="../../../scripts/jquery-1.7.2.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript">
+			if (typeof jQuery == 'undefined') {
+			    document.write(unescape("%3Cscript src='../../../scripts/jquery-1.7.2.js' type='text/javascript'%3E%3C/script%3E"));
+			}
+		</script>
 		<script type="text/javascript">
 			function switchImage(id, image){
 				$('#' + id + " img").attr("src", "assets/images/" + id + "/" + image + ".png");
@@ -14,27 +19,18 @@
 						col = (id+2)%3+1;
 					switchImage(id, 5);
 					for(var i = 1; i < 10; i++){
-						var iCol = (i+2)%3+1,
-							iRow = Math.ceil(i/3);
-						if(iRow == row || iCol == col){
-							if(iCol > col){
-								switchImage(i, 4);
-							} else if(iCol < col){
-								switchImage(i, 6);
-							}
-							if(iRow > row){
-								switchImage(i, 2);
+						if(i != id){
+							var iCol = (i+2)%3+1,
+								iRow = Math.ceil(i/3);
+							if(iRow == row){
+								iCol > col ? switchImage(i, 4) : switchImage(i, 6);
+							} else if(iCol == col){
+								iRow > row ? switchImage(i, 2) : switchImage(i, 8);
+							} else if(iRow > row){
+								iCol > col ? switchImage(i, 1) : switchImage(i, 3);
 							} else if(iRow < row){
-								switchImage(i, 8);
+								iCol < col ? switchImage(i, 9) : switchImage(i, 7);
 							}
-						} else if(iRow > row && iCol > col){
-							switchImage(i, 1);
-						} else if(iRow < row && iCol < col){
-							switchImage(i, 9);
-						} else if(iRow < row && iCol > col){
-							switchImage(i, 7);
-						} else if(iRow > row && iCol < col){
-							switchImage(i, 3);
 						}
 					}
 				})
